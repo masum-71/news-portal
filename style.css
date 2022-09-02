@@ -1,0 +1,16 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+nav .navbar-brand{
+    color: rgb(98, 98, 224);
+}
+
+nav span{
+    background-color: rgb(102, 102, 244);
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
