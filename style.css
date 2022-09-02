@@ -1,5 +1,6 @@
 * {
   font-family: "Roboto", sans-serif;
+  background-color: rgba(213, 229, 244, 0.435);
 }
 
 nav .navbar-brand{
@@ -19,4 +20,15 @@ nav span{
     height: 30px;
     border-radius: 50%;
     margin-left: 5px;
+}
+
+header ul li{
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+header ul li:hover{
+    color: rgb(83, 83, 244);
 }
