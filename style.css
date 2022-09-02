@@ -32,3 +32,8 @@ header ul li{
 header ul li:hover{
     color: rgb(83, 83, 244);
 }
+#items-num{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
