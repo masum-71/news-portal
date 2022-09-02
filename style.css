@@ -14,3 +14,9 @@ nav span{
     font-family: 'Dancing Script', cursive;
 }
 
+.user-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
