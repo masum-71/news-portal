@@ -64,7 +64,7 @@ const showNewsItem = (items) => {
             </div>
             <div>
               <p>${
-                item.author.name === null
+                item.author.name === null || item.author.name === ""
                   ? `Information not found`
                   : item.author.name
               }</p>
@@ -115,17 +115,14 @@ const showDetail = (id) => {
     .catch((error) => console.log("ERROE"));
 };
 
-
 const showModal = (news) => {
-  console.log(news)
-  const modalContainer = document.getElementById('modal-container');
+  console.log(news);
+  const modalContainer = document.getElementById("modal-container");
 
   modalContainer.innerHTML = `
   <div class="modal-header">
   <h5 class="modal-title" id="newsModalLabel">${news.title}</h5>
-  <img style="height: 200px; width: 200px;" src="${
-    news.image_url
-  }" >
+  <img style="height: 200px; width: 200px;" src="${news.image_url}" >
   <button
     type="button"
     class="btn-close"
@@ -134,7 +131,25 @@ const showModal = (news) => {
   ></button>
 </div>
 <div class="modal-body">${news.details}</div>
-<div class="modal-footer">
+<div class="modal-footer d-flex justify-content-between ">
+
+    <div> 
+    <img class="rounded-circle" style="height: 50px; width: 50px;" src="${
+      news.author.img
+    }" alt=""> 
+    <p>${
+      news.author.name === null || news.author.name === ""
+        ? `Information not found`
+        : news.author.name
+    }</p>
+    </div>
+
+    <div>
+    <div><i class="fa-regular fa-eye me-2"></i>${
+      news.total_view === null ? `Information not found` : news.total_view
+    }</div>
+    </div>
+
   <button
     type="button"
     class="btn btn-secondary"
@@ -143,5 +158,5 @@ const showModal = (news) => {
     Close
   </button>
 </div>
-  `
-}
+  `;
+};
