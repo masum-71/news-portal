@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Monpura News</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/40f74ed11b.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/40f74ed11b.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="shortcut icon"
       href="./img/icons8-news-50.png"
@@ -54,10 +57,10 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">NEWS</a>
+                <a class="nav-link" target="_blank" aria-current="page" href="index.html">NEWS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="blog.html">BLOG</a>
+                <a class="nav-link active"  href="blog.html">BLOG</a>
               </li>
               <li class="nav-item">
                 <img
@@ -70,9 +73,71 @@
           </div>
         </div>
       </nav>
+      <h1 class="text-center p-1 text-bg-info">
+        This is <span>Monpura</span> News's Blog
+      </h1>
     </header>
-    
-   
+    <main class="container">
+      <div>
+        <h2 class="text-center">
+            1.what is difference between var let and const in javascript
+          </h2>
+          <p>
+            In JavaScript, users can declare a variable using 3 keywords that are
+            var, let, and const. In this article, we will see the differences
+            between the var, let, and const keywords. We will discuss the scope and
+            other required concepts about each keyword. <br> <br> <strong><u>var keyword in JavaScript</u></strong> :
+            The var is the oldest keyword to declare a variable in JavaScript. <br>
+           <strong>Scope</strong> : Global scoped or function scoped. The scope of the var keyword is
+            the global or function scope. It means variables defined outside the
+            function can be accessed globally, and variables defined inside a
+            particular function can be accessed within the function <br> <br>
+           <strong><u>let keyword in JavaScript</u></strong> : The let keyword is an improved version of the var keyword. <br>
+           <strong>Scope</strong>: block scoped: The scope of a let variable is only block scoped. It can’t be accessible outside the particular block ({block}). Let’s see the below example. <br><br>
+          <strong><u>const keyword in JavaScript</u></strong> : The const keyword has all the properties that are the same as the let keyword, except the user cannot update it. <br>
+          <strong>Scope</strong> : block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared.
+          </p>
+      </div>
+      <div>
+        <h2 class="text-center">2. what is difference between arrow function and normal function</h2>
+        <p>
+            Arrow function — also called fat arrow function — is a new feature introduced in ES6 that is a more concise syntax for a writing function expression. <br> <br>
+
+            <strong>Following are the main differences:</strong>
+            <ul>
+                <li>Syntax</li>
+                <li>Arguments binding</li>
+                <li>Use of this keyword</li>
+                <li>Using a new keyword</li>
+                <li>No duplicate named parameters</li>
+            </ul>
+            1) <strong>Syntax</strong> : <br>
+            A developer can get the same result as regular functions by writing a few lines of code using arrow functions.
+
+            Curly brackets are not required if only one expression is present.If there’s only one argument, then the parentheses are not required either: <br>
+            2) <strong>Arguments binding</strong> : <br>
+            Arrow functions do not have arguments binding <br>
+            3) <strong>3) Use of this keyword</strong> : <br>
+            unlike Regular functions, arrow function does not have their own "this" keyword.
+             The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function. <br>
+             4) <strong>4) Using a new keyword</strong> : <br>
+             Regular functions created using function declarations or expressions are constructible and callable. Regular functions are constructible; they can be called using the new keyword.
+            However, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions. <br>
+            5) <strong>No duplicate named parameters</strong> : <br>
+            Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.
+            However, We can use duplicate named parameters for regular function in non-strict mode.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-center">3. why we use template literals in javascript</h2>
+        <p>Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+
+            Along with having normal strings, template literals can also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}. The strings and placeholders get passed to a function — either a default function, or a function you supply. The default function (when you don't supply your own) just performs string interpolation to do substitution of the placeholders and then concatenate the parts into a single string.
+            
+            To supply a function of your own, precede the template literal with a function name; the result is called a tagged template. In that case, the template literal is passed to your tag function, where you can then perform whatever operations you want on the different parts of the template literal.</p>
+      </div>
+    </main>
+
     <!-- Scripts -->
     <script src="./app.js"></script>
     <script
