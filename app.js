@@ -44,7 +44,6 @@ const showNewsItem = (items) => {
   const newsItems = document.getElementById("news-items");
   newsItems.innerHTML = "";
   items.forEach((item) => {
-    console.log(item);
     const div = document.createElement("div");
     div.innerHTML = `
     <div class="card mb-3">
@@ -83,7 +82,12 @@ const showNewsItem = (items) => {
             <i class="fa-regular fa-star"></i>
           </div>
           <div>
-            <button class="btn btn-primary">View Detailes</button>
+          
+            <button onclick= "showDetail('${
+              item._id
+            }')" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#newsModal">View Detailes</button>
+            
           </div>
         </div>
     </div>
@@ -103,3 +107,41 @@ const spinner = (isLoading) => {
     spinner.classList.add("d-none");
   }
 };
+
+const showDetail = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+    .then((res) => res.json())
+    .then((data) => showModal(data.data[0]))
+    .catch((error) => console.log("ERROE"));
+};
+
+
+const showModal = (news) => {
+  console.log(news)
+  const modalContainer = document.getElementById('modal-container');
+
+  modalContainer.innerHTML = `
+  <div class="modal-header">
+  <h5 class="modal-title" id="newsModalLabel">${news.title}</h5>
+  <img style="height: 200px; width: 200px;" src="${
+    news.image_url
+  }" >
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+  ></button>
+</div>
+<div class="modal-body">${news.details}</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-secondary"
+    data-bs-dismiss="modal"
+  >
+    Close
+  </button>
+</div>
+  `
+}
