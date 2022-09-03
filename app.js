@@ -27,17 +27,16 @@ const showNews = (id) => {
     .then((res) => res.json())
     .then((data) => showNewsItem(data.data))
     .catch((error) => console.log("ERROE"));
-    spinner(true)
+  spinner(true);
 };
 
 //Show News items
 
 const showNewsItem = (items) => {
-
   //show founded item numbers
   const itemsNum = document.getElementById("items-num");
   const num = items.length;
-  itemsNum.innerText = `${num <= 0 ? 'No data found' : num + ' items found'}`;
+  itemsNum.innerText = `${num <= 0 ? "No data found" : num + " items found"}`;
   //sorted by most viewes
   const totalView = items.sort((a, b) => b.total_view - a.total_view);
 
@@ -92,16 +91,15 @@ const showNewsItem = (items) => {
     `;
     newsItems.appendChild(div);
   });
-  spinner(false)
+  spinner(false);
 };
 
-
 //Spinner added
-const spinner = isLoading  => {
-  const spinner = document.getElementById('spinner')
-  if(isLoading){
-    spinner.classList.remove('d-none')
-  }else{
-    spinner.classList.add('d-none')
+const spinner = (isLoading) => {
+  const spinner = document.getElementById("spinner");
+  if (isLoading) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
   }
-}
+};
