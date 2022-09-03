@@ -108,6 +108,7 @@ const spinner = (isLoading) => {
   }
 };
 
+//Load news detail api with id
 const showDetail = (id) => {
   fetch(`https://openapi.programming-hero.com/api/news/${id}`)
     .then((res) => res.json())
@@ -115,6 +116,7 @@ const showDetail = (id) => {
     .catch((error) => console.log("ERROE"));
 };
 
+//set Modal
 const showModal = (news) => {
   console.log(news);
   const modalContainer = document.getElementById("modal-container");
