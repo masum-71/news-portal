@@ -33,9 +33,11 @@ const showNews = (id) => {
 //Show News items
 
 const showNewsItem = (items) => {
+
+  //show founded item numbers
   const itemsNum = document.getElementById("items-num");
   const num = items.length;
-  itemsNum.innerText = `${num} Items Found`;
+  itemsNum.innerText = `${num <= 0 ? 'No data found' : num + ' items found'}`;
   //sorted by most viewes
   const totalView = items.sort((a, b) => b.total_view - a.total_view);
 
